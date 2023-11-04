@@ -70,7 +70,7 @@ set(gca, 'FontSize', 10, 'LineWidth', 1)
 grid on 
 legend('Spline M', 'Data points M','Spline i', 'Data Points i','Spline M', 'Data points M', 'Spline S', 'Data Points S');
 
-% IRA
+%% IRA
 
 % Data coordinates for letter ‘I’
 x_i_4 = [2 2.5 3 2.8 2.6 2.7 3 3.4 3.8];
@@ -119,7 +119,7 @@ plot(x_r, y_r, 'bo', 'MarkerFaceColor', 'red')
 plot(xx_a_3, yy_a_3, 'magenta', 'LineWidth', 1.5)
 plot(x_a_3, y_a_3, 'bo', 'MarkerFaceColor', 'magenta')
 
-axis([0 20 0 20]);
+axis([0 50 0 50]);
 grid on;
 title('Spline Interpolation for the Letters I, R, and A');
 xlabel('x');
