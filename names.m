@@ -70,19 +70,21 @@ set(gca, 'FontSize', 10, 'LineWidth', 1)
 grid on 
 legend('Spline M', 'Data points M','Spline i', 'Data Points i','Spline M', 'Data points M', 'Spline S', 'Data Points S');
 
+
 %% IRA
+% data coordinates for letter 'I'
+x_i_4 = [2 2.5 3.0 2.8 2.6 2.7 3.0 3.4 3.8];
+y_i_4 = [11 11.2 13.0 11 9 8.4 8 8.4 9.8];
 
-% Data coordinates for letter ‘I’
-x_i_4 = [2 2.5 3 2.8 2.6 2.7 3 3.4 3.8];
-y_i_4 = [11 11.2 12 11 9 8.4 8 8.4 9.8];
+% % data coordinates for letter 'R'
+x_r = [5 5.5 6 6 5.8 5.7 6.7 8.4 8.8];
+y_r = [12 12.3 13 11.5 10 8 13 12.8 12];
 
-% Data coordinates for letter ‘R’
-x_r = [5 5.5 6 6 5.8 5.7 6.8 7.2 8.1 9 9.1];
-y_r = [12 12.3 13 11.5 10 8 12.6 13 12.8 12 11.3];
 
-% Data coordinates for letter ‘A’
-x_a_3 = [14 13.2 12.5 11.2 11 11.2 12 13 13.5 14 14.2 15];
-y_a_3 = [11 12 12.5 12 10.5 9 8 9 10 10 9 8.3];
+% data coordinates for letter 'A'
+x_a_3 = [13 12.5 11.5 10.2 10 10.2 11 12 12.5 13 13.2 14];
+y_a_3 = [11 12 12.5 12 10.5 9 8 9 10 11 9 8.3];
+
 
 n_i_4 = length(x_i_4);
 n_r = length(x_r);
@@ -90,41 +92,42 @@ n_a_3 = length(x_a_3);
 
 t_i_4 = 0:n_i_4-1;
 t_r = 0:n_r-1;
-t_a_3 = 0:n_a_3-1;
+t_a_3 = 0:n_a_3-1; 
 
-tt_i_4 = 0:0.01:n_i_4-1;
-tt_r = 0:0.01:n_r-1;
+tt_i_4 = 0:0.01:n_i_4-1; 
+tt_r = 0:0.01:n_r-1; 
 tt_a_3 = 0:0.01:n_a_3-1;
 
-% Spline interpolation for ‘I’
+% Compute spline interpolation for 'I'
 xx_i_4 = spline(t_i_4, x_i_4, tt_i_4);
 yy_i_4 = spline(t_i_4, y_i_4, tt_i_4);
 
-% Spline interpolation for ‘R’
+% Compute spline interpolation for 'R'
 xx_r = spline(t_r, x_r, tt_r);
 yy_r = spline(t_r, y_r, tt_r);
 
-% Spline interpolation for ‘A’
+% Compute spline interpolation for 'A'
 xx_a_3 = spline(t_a_3, x_a_3, tt_a_3);
 yy_a_3 = spline(t_a_3, y_a_3, tt_a_3);
 
+
+% Plot settings
 figure(1)
-plot(xx_i_4, yy_i_4, 'magenta', 'LineWidth', 1.5)
+plot(xx_i_4, yy_i_4, 'magenta', 'LineWidth', 1.5) 
 hold on
-plot(x_i_4, y_i_4, 'bo', 'MarkerFaceColor', 'magenta')
+plot(x_i_4, y_i_4, 'bo', 'MarkerFaceColor', 'magenta') 
 
-plot(xx_r, yy_r, 'red', 'LineWidth', 1.5)
-plot(x_r, y_r, 'bo', 'MarkerFaceColor', 'red')
+plot(xx_r, yy_r, 'red', 'LineWidth', 1.5) 
+plot(x_r, y_r, 'bo', 'MarkerFaceColor', 'red') 
 
-plot(xx_a_3, yy_a_3, 'magenta', 'LineWidth', 1.5)
-plot(x_a_3, y_a_3, 'bo', 'MarkerFaceColor', 'magenta')
+plot(xx_a_3, yy_a_3, 'magenta', 'LineWidth', 1.5) 
+plot(x_a_3, y_a_3, 'bo', 'MarkerFaceColor', 'magenta') 
 
 axis([0 50 0 50]);
 grid on;
-title('Spline Interpolation for the Letters I, R, and A');
+title('Spline Interpolation for the I R A');
 xlabel('x');
 ylabel('y');
 set(gca, 'FontSize', 10, 'LineWidth', 1)
-
-legend('Spline I', 'Data points I', 'Spline R', 'Data Points R', 'Spline A', 'Data points A');
-
+grid on 
+legend('Spline I', 'Data points I','Spline R', 'Data Points R','Spline A', 'Data points A');
