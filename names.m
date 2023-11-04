@@ -171,8 +171,71 @@ plot(x_n_3, y_n_3, 'bo')
 plot(xx_a_2, yy_a_2, 'k', 'LineWidth', 1.5)
 plot(x_a_2, y_a_2, 'bo')
 
-%% --------------------------------------------------------------------------------------
+%% HANI --------------------------------------------------------------------------------------
 
+% data coordinates for letter 'H'
+x_h = [2.0 1.0 1.5 2.5 3.0 2.7 3.0 3.7];
+y_h = [26 22 24 24.5 24 22.5 22 23];
+
+% % data coordinates for letter 'A'
+x_a_1 = [7.0 6.0 5.2 5.0 5.5 6.7 7.1 7.0 6.8 6.7 7.0 7.7];
+y_a_1 = [24 24.5 24 23 22 22.5 24.5 24 23 22.5 22 23];
+
+% data coordinates for letter 'N'
+x_n_1 = [10.0 9.25 9.5 10.25 11.0 11.5 11.25 11.5 12.2];
+y_n_1 = [24.5 22 23 24 24.5 24 23 22 23];
+
+% data coordinates for letter 'I'
+x_i_1 = [14.0 13.75 13.6 13.7 14.6 14.35];
+y_i_1 = [24.5 23.7 23 22 23 25.45];
+
+n_h = length(x_h);
+n_a_1 = length(x_a_1);
+n_n_1 = length(x_n_1);
+n_i_1 = length(x_i_1);
+
+t_h = 0:n_h-1; 
+t_a_1 = 0:n_a_1-1; 
+t_n_1 = 0:n_n_1-1; 
+t_i_1 = 0:n_i_1-1;
+
+tt_h = 0:0.01:n_h-1; 
+tt_a_1 = 0:0.01:n_a_1-1; 
+tt_n_1 = 0:0.01:n_n_1-1; 
+tt_i_1 = 0:0.01:n_i_1-1; 
+
+% Compute spline interpolation for 'H'
+xx_h = spline(t_h, x_h, tt_h);
+yy_h = spline(t_h, y_h, tt_h);
+
+% Compute spline interpolation for 'A'
+xx_a_1 = spline(t_a_1, x_a_1, tt_a_1);
+yy_a_1 = spline(t_a_1, y_a_1, tt_a_1);
+
+% Compute spline interpolation for 'N'
+xx_n_1 = spline(t_n_1, x_n_1, tt_n_1);
+yy_n_1 = spline(t_n_1, y_n_1, tt_n_1);
+
+% Compute spline interpolation for 'I'
+xx_i_1 = spline(t_i_1, x_i_1, tt_i_1);
+yy_i_1 = spline(t_i_1, y_i_1, tt_i_1);
+
+% Plot settings
+figure(1)
+plot(xx_h, yy_h, 'blue', 'LineWidth', 1.5) 
+hold on
+plot(x_h, y_h, 'bo', 'MarkerFaceColor', 'blue') 
+
+plot(xx_a_1, yy_a_1, 'red', 'LineWidth', 1.5)
+plot(x_a_1, y_a_1, 'bo', 'MarkerFaceColor', 'red')
+
+plot(xx_n_1, yy_n_1, 'green', 'LineWidth', 1.5)
+plot(x_n_1, y_n_1, 'bo', 'MarkerFaceColor', 'green')
+
+plot(xx_i_1, yy_i_1, 'magenta', 'LineWidth', 1.5)
+plot(x_i_1, y_i_1, 'bo', 'MarkerFaceColor', 'magenta') 
+
+%% --------------------------------------------------------------------------------------
 axis([0 15 0 30])
 grid on
 title('Spline Interpolation of Cursive Letters Group rawr')
