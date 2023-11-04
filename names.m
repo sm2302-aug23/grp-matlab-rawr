@@ -127,6 +127,72 @@ axis([0 50 0 50]);
 grid on;
 title('Spline Interpolation for the I R A');
 xlabel('x');
+
+%% ---------------------------------------- nina ----------------------------------------
+% n_2
+x_n_2 = [1.7 0.4 2.2 2.8 2.7 2 2.2 3];
+y_n_2 = [18.4 15 18 18.4 17 15.3 15 15.7];
+
+% i_2
+x_i_2 = [4 4.6 5.4 5.3 5 4.6 4.3 4.25 4.6];
+y_i_2 = [16.7 17.1 18 18.5 18 17.1 16.1 15.4 15];
+
+% n_3
+x_n_3 = [6.7 5.4 7.2 7.8 7.7 7 7.2 8];
+y_n_3 = [18.4 15 18 18.4 17 15.3 15 15.7];
+
+% a
+x_a_2 = [11 10.3 9.3 8.8 9.2 10.15 10.3 10.5];
+y_a_2 = [18.4 17 15.4 15.4 17.3 18.4 17 15];
+
+n_n_2 = length(x_n_2); 
+n_i_2 = length(x_i_2); 
+n_n_3 = length(x_n_3); 
+n_a_2 = length(x_a_2);
+
+t_n_2 = 0:n_n_2-1; 
+t_i_2 = 0:n_i_2-1; 
+t_n_3 = 0:n_n_3-1; 
+t_a_2 = 0:n_a_2-1;
+
+tt_n_2 = 0:0.01:n_n_2-1; 
+tt_i_2 = 0:0.01:n_i_2-1; 
+tt_n_3 = 0:0.01:n_n_3-1; 
+tt_a_2 = 0:0.01:n_a_2-1;
+
+xx_n_2 = spline(t_n_2, x_n_2, tt_n_2);
+xx_i_2 = spline(t_i_2, x_i_2, tt_i_2);
+xx_n_3 = spline(t_n_3, x_n_3, tt_n_3);
+xx_a_2 = spline(t_a_2, x_a_2, tt_a_2);
+
+yy_n_2 = spline(t_n_2, y_n_2, tt_n_2);
+yy_i_2 = spline(t_i_2, y_i_2, tt_i_2);
+yy_n_3 = spline(t_n_3, y_n_3, tt_n_3);
+yy_a_2 = spline(t_a_2, y_a_2, tt_a_2);
+
+figure(1)
+plot(xx_n_2, yy_n_2, 'k', 'LineWidth', 1.5)
+hold on
+plot(x_n_2, y_n_2, 'bo')
+
+plot(xx_i_2, yy_i_2, 'k', 'LineWidth', 1.5)
+plot(x_i_2, y_i_2, 'bo')
+
+plot(xx_n_3, yy_n_3, 'k', 'LineWidth', 1.5)
+plot(x_n_3, y_n_3, 'bo')
+
+plot(xx_a_2, yy_a_2, 'k', 'LineWidth', 1.5)
+plot(x_a_2, y_a_2, 'bo')
+
+%% --------------------------------------------------------------------------------------
+
+axis([0 15 0 30])
+grid on
+title('Spline Interpolation of Cursive Letters Group rawr')
+xlabel('x')
+ylabel('y')
+set(gcs, 'FontSize', 10, 'LineWidth', 1)
+grid on
 ylabel('y');
 set(gca, 'FontSize', 10, 'LineWidth', 1)
 grid on 
