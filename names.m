@@ -180,5 +180,3 @@ xlabel('x')
 ylabel('y')
 set(gcs, 'FontSize', 10, 'LineWidth', 1)
 grid on
-legend('Spline M', 'Data points M','Spline i', 'Data Points i','Spline M', 'Data points M', 'Spline S', 'Data Points S');
-legend('Spline I', 'Data points I','Spline R', 'Data Points R','Spline A', 'Data points A');
