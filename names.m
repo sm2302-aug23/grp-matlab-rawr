@@ -61,14 +61,6 @@ plot(x_m_2, y_m_2, 'bo', 'MarkerFaceColor', 'green') % plot data points for 'M'
 
 plot(xx_s, yy_s, 'magenta', 'LineWidth', 1.5) % plot spline for 'S'
 plot(x_s, y_s, 'bo', 'MarkerFaceColor', 'magenta') % plot data points for 'S'
-axis([0 50 0 50]);
-grid on;
-title('Spline Interpolation for the M I M S');
-xlabel('x');
-ylabel('y');
-set(gca, 'FontSize', 10, 'LineWidth', 1)
-grid on 
-legend('Spline M', 'Data points M','Spline i', 'Data Points i','Spline M', 'Data points M', 'Spline S', 'Data Points S');
 
 
 %% IRA
@@ -122,11 +114,6 @@ plot(x_r, y_r, 'bo', 'MarkerFaceColor', 'red')
 
 plot(xx_a_3, yy_a_3, 'magenta', 'LineWidth', 1.5) 
 plot(x_a_3, y_a_3, 'bo', 'MarkerFaceColor', 'magenta') 
-
-axis([0 50 0 50]);
-grid on;
-title('Spline Interpolation for the I R A');
-xlabel('x');
 
 %% ---------------------------------------- nina ----------------------------------------
 % n_2
@@ -193,7 +180,5 @@ xlabel('x')
 ylabel('y')
 set(gcs, 'FontSize', 10, 'LineWidth', 1)
 grid on
-ylabel('y');
-set(gca, 'FontSize', 10, 'LineWidth', 1)
-grid on 
+legend('Spline M', 'Data points M','Spline i', 'Data Points i','Spline M', 'Data points M', 'Spline S', 'Data Points S');
 legend('Spline I', 'Data points I','Spline R', 'Data Points R','Spline A', 'Data points A');
