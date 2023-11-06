@@ -232,7 +232,7 @@ plot(xx_i_1, yy_i_1, 'magenta', 'LineWidth', 1.5)
 plot(x_i_1, y_i_1, 'bo', 'MarkerFaceColor', 'magenta') 
 
 %% --------------------------------------------------------------------------------------
-axis([0 15 0 30])
+axis([0 16 0 30])
 grid on
 title('Spline Interpolation of Cursive Letters Group Rawr')
 xlabel('x')
